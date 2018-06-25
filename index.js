@@ -24,7 +24,8 @@ const main = async () => {
             const content = await resp.text();
             const ts = new Date();
             const insertQuery = `INSERT INTO ${TABLE_NAME}(detail,ts) VALUES('${content}', NOW())`;
-            console.log(insertQuery)
+            //console.log(insertQuery)
+            //Array.from(document.querySelectorAll('#voteTime>span:nth-child(odd)')).map(x=>x.innerText).join('').replace(/\s/g,'')
             pgClient.query(insertQuery);
         }
     });
